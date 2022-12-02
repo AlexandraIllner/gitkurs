@@ -1,0 +1,318 @@
+git branches:
+am besten jedes feature in eigenem branch
+branches absolut notwendig, um zusammenzuarbeiten!
+
+	git branch: zeigt alle vorhandenen branches an, * -> hier sind wir grade
+	git branch <name>: legt neuen branch an
+	git checkout <name>: wechseln zu diesem branch
+	git checkout -b <name>: anlegen eines neuen und wechseln zu diesem branch in einem
+
+branches zusammenführen: fast-forward-merge
+		git merge <branch>
+		
+
+branches zusammenführen: three-way-merge
+situation: während das feature entwickelt wurde, hat sich auch der master-branch verändert
+
+
+al_ni@ala-windoze MINGW64 ~
+$ ls
+'3D Objects'/
+ AndroidStudioProjects/
+ Anwendungsdaten@
+ AppData/
+ Contacts/
+ Cookies@
+ Documents/
+ Downloads/
+ Dropbox/
+ Druckumgebung@
+'Eigene Dateien'@
+ Favorites/
+ Intel/
+ IntelGraphicsProfiles/
+ Links/
+'Lokale Einstellungen'@
+ MJKJDeviceGUID
+ MJKJRegInfo_RJYBWYT5N4TAB2IUPVOCJ3UXIPOTLOIN
+ Music/
+ NTUSER.DAT
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b1.regtrans-ms
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b2.regtrans-ms
+ Netzwerkumgebung@
+ OneDrive/
+ Postman/
+ Projekte/
+ Recent@
+'Saved Games'/
+ Searches/
+ SendTo@
+ Startmenü@
+ Videos/
+'VirtualBox VMs'/
+ Vorlagen@
+ git-completion.bash~
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ ntuser.ini
+ package-lock.json
+
+al_ni@ala-windoze MINGW64 ~
+$ cd Projekte
+
+al_ni@ala-windoze MINGW64 ~/Projekte
+$ ls
+ 404.html                                 homepa
+ FIW_IKT/                                 howto.
+ SWTM-2088_Atlassian-Git-Cheatsheet.pdf   howto_
+ WebTech/                                 howto_
+ WebTech21.1/                             images
+ alasTestProject/                         img/
+ applications.html                        index.
+ bitnami.css                              index.
+ capcareer_project/                       javasc
+ dashboard/                               nachhi
+ de/                                      phpinf
+ docs/                                    styles
+ faq.html                                 test/
+'favicon (2).ico'                         webali
+ favicon.ico                              xampp/
+ gitkurs/                                 youtub
+ gitkursKopie/
+
+al_ni@ala-windoze MINGW64 ~/Projekte
+$ cd gitkurs
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (ma
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will b
+  (use "git restore <file>..." to discard change
+        modified:   nochmehrmuell.txt
+
+no changes added to commit (use "git add" and/or
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (ma
+$ git branch
+* master
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git checkout -b content-europe
+Switched to a new branch 'content-europe'
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git branch
+* content-europe
+  master
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ ls
+git_kurs.txt  muell.txt
+index.html    nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ nano index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git status
+On branch content-europe
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        modified:   nochmehrmuell.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git add index.html
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git commit -m "eine Zeile zugefuegt"
+[content-europe d9e9dae] eine Zeile zugefuegt
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git log --oneline
+d9e9dae (HEAD -> content-europe) eine Zeile zugefuegt
+452cacb (origin/master, origin/HEAD, master) gitkurs.txt
+02e859b noch mehr muell
+e01065a index.html geändert
+cd12f30 mal gucken
+788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+bd87cbc geändert mit --amend
+9347740 jetzt aber
+9a5afd7 second change
+4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ nano index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git add index.html
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git commit -m "eine Zeile zugefuegt"
+[content-europe ef72424] eine Zeile zugefuegt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git log --oneline --graph --branches
+* ef72424 (HEAD -> content-europe) eine Zeile zugefuegt
+* d9e9dae eine Zeile zugefuegt
+* 452cacb (origin/master, origin/HEAD, master) gitkurs.txt
+* 02e859b noch mehr muell
+* e01065a index.html geändert
+* cd12f30 mal gucken
+*   788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+|\
+| * 9347740 jetzt aber
+* | bd87cbc geändert mit --amend
+|/
+* 9a5afd7 second change
+* 4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git checkout master
+Switched to branch 'master'
+M       nochmehrmuell.txt
+Your branch is up to date with 'origin/master'.
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git log --oneline --graph --branches
+* ef72424 (content-europe) eine Zeile zugefuegt
+* d9e9dae eine Zeile zugefuegt
+* 452cacb (HEAD -> master, origin/master, origin/HEAD) gitkurs.txt
+* 02e859b noch mehr muell
+* e01065a index.html geändert
+* cd12f30 mal gucken
+*   788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+|\
+| * 9347740 jetzt aber
+* | bd87cbc geändert mit --amend
+|/
+* 9a5afd7 second change
+* 4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git checkout content-europe
+Switched to branch 'content-europe'
+M       nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git checkout master
+Switched to branch 'master'
+M       nochmehrmuell.txt
+Your branch is up to date with 'origin/master'.
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git log --oneline --branches
+ef72424 (content-europe) eine Zeile zugefuegt
+d9e9dae eine Zeile zugefuegt
+452cacb (HEAD -> master, origin/master, origin/HEAD) gitkurs.txt
+02e859b noch mehr muell
+e01065a index.html geändert
+cd12f30 mal gucken
+788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+bd87cbc geändert mit --amend
+9347740 jetzt aber
+9a5afd7 second change
+4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git merge content-europe
+Updating 452cacb..ef72424
+Fast-forward
+ index.html | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git log --oneline --branches
+ef72424 (HEAD -> master, content-europe) eine Zeile zugefuegt
+d9e9dae eine Zeile zugefuegt
+452cacb (origin/master, origin/HEAD) gitkurs.txt
+02e859b noch mehr muell
+e01065a index.html geändert
+cd12f30 mal gucken
+788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+bd87cbc geändert mit --amend
+9347740 jetzt aber
+9a5afd7 second change
+4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git checkout content-europe
+Switched to branch 'content-europe'
+M       nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ nano nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git status
+On branch content-europe
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   nochmehrmuell.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git add nochmehrmuell.txt
+warning: in the working copy of 'nochmehrmuell.txt', LF will be replaced by CRLF the next time Git touches it
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git commit -m "sehr viele Nullen zugeuegt"
+[content-europe 20ed5ca] sehr viele Nullen zugeuegt
+ 1 file changed, 8 insertions(+)
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git status
+On branch content-europe
+nothing to commit, working tree clean
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git push
+fatal: The current branch content-europe has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin content-europe
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git push --set-upstream origin content-europe
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 949 bytes | 474.00 KiB/s, done.
+Total 9 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+remote:
+remote: Create a pull request for 'content-europe' on GitHub by visiting:
+remote:      https://github.com/AlexandraIllner/gitkurs/pull/new/content-europe
+remote:
+To https://github.com/AlexandraIllner/gitkurs.git
+ * [new branch]      content-europe -> content-europe
+branch 'content-europe' set up to track 'origin/content-europe'.
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (content-europe)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$
+
+	

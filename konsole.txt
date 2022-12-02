@@ -1,0 +1,887 @@
+
+al_ni@ala-windoze MINGW64 ~
+$ pwd
+/c/Users/al_ni
+
+al_ni@ala-windoze MINGW64 ~
+$ ls
+'3D Objects'/
+ AndroidStudioProjects/
+ Anwendungsdaten@
+ AppData/
+ Contacts/
+ Cookies@
+ Documents/
+ Downloads/
+ Dropbox/
+ Druckumgebung@
+'Eigene Dateien'@
+ Favorites/
+ Intel/
+ IntelGraphicsProfiles/
+ Links/
+'Lokale Einstellungen'@
+ MJKJDeviceGUID
+ MJKJRegInfo_RJYBWYT5N4TAB2IUPVOCJ3UXIPOTLOIN
+ Music/
+ NTUSER.DAT
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TM.blf
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000001.regtrans-ms
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000002.regtrans-ms
+ Netzwerkumgebung@
+ OneDrive/
+ Postman/
+ Projekte/
+ Recent@
+'Saved Games'/
+ Searches/
+ SendTo@
+ Startmenü@
+ Videos/
+'VirtualBox VMs'/
+ Vorlagen@
+ git-completion.bash~
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ ntuser.ini
+ package-lock.json
+
+al_ni@ala-windoze MINGW64 ~
+$ cd Projekte/
+
+al_ni@ala-windoze MINGW64 ~/Projekte
+$ ls
+ 404.html             faq.html                    index.html
+ FIW_IKT/            'favicon (2).ico'            index.php
+ WebTech/             favicon.ico                 javascripts/
+ WebTech21.1/         gitkurs/                    nachhilfe/
+ applications.html    homepage/                   phpinfo.php
+ bitnami.css          howto.html                  stylesheets/
+ capcareer_project/   howto_platform_links.html   test/
+ dashboard/           howto_shared_links.html     webalizer/
+ de/                  images/                     xampp/
+ docs/                img/
+
+al_ni@ala-windoze MINGW64 ~/Projekte
+$ cd gitkurs/
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ ls
+index.html  muell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ nano muell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git add muell.txt
+warning: in the working copy of 'muell.txt', LF will be replaced by CRLF the next time Git touches it
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   muell.txt
+
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git reset
+Unstaged changes after reset:
+M       muell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   muell.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git log --oneline
+e01065a (HEAD -> master) index.html geändert
+cd12f30 (origin/master, origin/HEAD) mal gucken
+788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+bd87cbc geändert mit --amend
+9347740 jetzt aber
+9a5afd7 second change
+4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ echo nochmehrmuell.txt
+nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ nano nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ ls
+index.html  muell.txt  nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git log --oneline
+e01065a (HEAD -> master) index.html geändert
+cd12f30 (origin/master, origin/HEAD) mal gucken
+788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+bd87cbc geändert mit --amend
+9347740 jetzt aber
+9a5afd7 second change
+4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git add nochmehrmuell.txt
+warning: in the working copy of 'nochmehrmuell.txt', LF will be replaced by CRLF the next time Git touches it
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git log --oneline
+e01065a (HEAD -> master) index.html geändert
+cd12f30 (origin/master, origin/HEAD) mal gucken
+788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+bd87cbc geändert mit --amend
+9347740 jetzt aber
+9a5afd7 second change
+4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git add commit -m 'noch mehr muell'
+error: unknown switch `m'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    --renormalize         renormalize EOL of tracked files (implies -u)
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+    --sparse              allow updating entries outside of the sparse-checkout cone
+    --chmod (+|-)x        override the executable bit of the listed files
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git commit -m 'noch mehr muell'
+[master 02e859b] noch mehr muell
+ 1 file changed, 1 insertion(+)
+ create mode 100644 nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git log --oneline
+02e859b (HEAD -> master) noch mehr muell
+e01065a index.html geändert
+cd12f30 (origin/master, origin/HEAD) mal gucken
+788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+bd87cbc geändert mit --amend
+9347740 jetzt aber
+9a5afd7 second change
+4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ ls
+index.html  muell.txt  nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git reset 02e859b
+Unstaged changes after reset:
+M       muell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git log --oneline
+02e859b (HEAD -> master) noch mehr muell
+e01065a index.html geändert
+cd12f30 (origin/master, origin/HEAD) mal gucken
+788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+bd87cbc geändert mit --amend
+9347740 jetzt aber
+9a5afd7 second change
+4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   muell.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ ls
+index.html  muell.txt  nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git reset --hard 02e859b
+HEAD is now at 02e859b noch mehr muell
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ ls
+index.html  muell.txt  nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git reset --hard 02e859b
+HEAD is now at 02e859b noch mehr muell
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ ls
+index.html  muell.txt  nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ ls
+index.html  muell.txt  nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ cat nochmehrmuell.txt
+123456789
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ ls
+index.html  muell.txt  nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ ls
+git_kurs.txt  index.html  muell.txt  nochmehrmuell.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ cat nochmehrmuell.txt
+123456789
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        git_kurs.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git add git_kurs.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git commit - m 'gitkurs.txt'
+error: pathspec '-' did not match any file(s) known to git
+error: pathspec 'm' did not match any file(s) known to git
+error: pathspec 'gitkurs.txt' did not match any file(s) known to git
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git commit -m 'gitkurs.txt'
+[master 452cacb] gitkurs.txt
+ 1 file changed, 132 insertions(+)
+ create mode 100644 git_kurs.txt
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git push
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 2.37 KiB | 1.18 MiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/AlexandraIllner/gitkurs.git
+   cd12f30..452cacb  master -> master
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git log --oneline
+452cacb (HEAD -> master, origin/master, origin/HEAD) gitkurs.txt
+02e859b noch mehr muell
+e01065a index.html geändert
+cd12f30 mal gucken
+788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+bd87cbc geändert mit --amend
+9347740 jetzt aber
+9a5afd7 second change
+4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git log --oneline
+452cacb (HEAD -> master, origin/master, origin/HEAD) gitkurs.txt
+02e859b noch mehr muell
+e01065a index.html geändert
+cd12f30 mal gucken
+788e50e Merge branch 'master' of https://github.com/AlexandraIllner/gitkurs
+bd87cbc geändert mit --amend
+9347740 jetzt aber
+9a5afd7 second change
+4b06e37 Creating initial index.html
+
+al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
+$ git diff cd12f30 452cacb
+diff --git a/git_kurs.txt b/git_kurs.txt
+new file mode 100644
+index 0000000..67f0287
+--- /dev/null
++++ b/git_kurs.txt
+@@ -0,0 +1,132 @@
++GIT-KURS Udemy
++
++Git Bash
++
++pwd: wo bin ich (Pfad/directory)
++cd: change directory
++cd ..: ins Vz. drüber wechseln
++ls: Verzeichnisse anzeigen
++ls     -a: auch versteckte Vz. anzeigen
++       -l: Rechte anzeigen
++mkdir <name>: Verzeichnis <name>erstellen
++touch <name>: Datei erstellen
++mv <name> <newName>
++mv <name> <path>
++cp <name> <copyName> <path>
++rm
++rm -r
++
++clear
++
++git config --global core.editor nano
++nano
++ctrl + o <-| (enter)
++ctrl x
++
++git init
++git status: zeigt unversionierte Dateien an
++
++staging area & commits
++
++Ablauf:
++working directory
++|      git add
++V
++staging area
++|      git commit
++V
++repository
++
++commit: aktuelle/r 'Version'/Zustand der Datei(en)
++wird vorbereitet in der staging area, dahin gelangt sie über
++git add <file oder folder>
++--> (use "git rm --cached <file>..." to unstage)
++
++nach änderung der gestageten Datei:
++  (use "git add <file>..." to update what will be committed)
++  (use "git restore <file>..." to discard changes in working directory)
++
++ohne weiteres git add werden Änderungen nicht verfolgt!
++Allerdings ist der vorige Zustand dann 'weg'
++
++git commit: best practice: eine atomare änderung pro commit
++git commit -m "<message>": Änderung spezifizieren, möglichst genau und verständlich, gut: auf Englisch
++
++danach wird angezeigt, wie viele Dateien geändert wurden, wie viele insertions
++
++warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it????
++
++git log: zeigt commit-history an, letzte Änderung ganz oben
++git log -p: gibt alle Veränderungen (diff) in den commits an, kann aber entsprechend lang werden
++
++q beendet das Ganze
++
++
++git log --oneline ist übersichtlicher (erste Zeile des Kommentars)
++
++commits überschreiben/letzten commit ändern
++
++Achtung: vorsichtig verwenden, nur bei lokalen Änderungen, nicht im remote Repo, vor allem wenn/wo andere mitarbeiten
++
++git commit --amend
++
++git diff: zeigt (noch nicht gestagete, bevor git add ausgeführt wurde) Änderungen im pwd. a/alte_version b/neue_version, - gelöschte, + hinzugekommene, @@ Zeilen die geändert wurden jeweils @@
++
++git diff --cached: zeigt Änderungen im staging area, sonst wie git diff
++
++git diff <hashÄltererCommit> <hashNeuererCommit> -- <optionalDateiName>: zeigt Änderungen nach commit, sonst wie git diff
++
++git <command> -- <dateiName>: bezieht das command nur auf die Datei, geht auch mit dateiName.* für alle möglichen Endungen
++
++git reset <optionalMitDateiNamen>: nimmt geänderte Dateien aus der staging area wieder raus
++
++in gitbash:
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ nano muell.txt
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git add muell.txt
++warning: in the working copy of 'muell.txt', LF will be replaced by CRLF the next time Git touches it
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git status
++On branch master
++Your branch is ahead of 'origin/master' by 1 commit.
++  (use "git push" to publish your local commits)
++
++Changes to be committed:
++  (use "git restore --staged <file>..." to unstage)
++        modified:   muell.txt
++
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git reset
++Unstaged changes after reset:
++M       muell.txt
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git status
++On branch master
++Your branch is ahead of 'origin/master' by 1 commit.
++  (use "git push" to publish your local commits)
++
++Changes not staged for commit:
++  (use "git add <file>..." to update what will be committed)
++  (use "git restore <file>..." to discard changes in working directory)
++        modified:   muell.txt
++
++no changes added to commit (use "git add" and/or "git commit -a")
++
++git reset <commitHash>: nimmt alle commits nach commitHash zurück, die Änderungen bleiben aber im pwd erhalten
++
++git reset --hard <commitHash>: wie git reset <commitHash>, aber die Änderungen werden auch im pwd verworfen - also Achtung!
++
++
++
++
++
++
++
++
++
++
+diff --git a/index.html b/index.html
+index 782ae88..868c885 100644
+--- a/index.html
++++ b/index.html
+@@ -1,6 +1,10 @@
+ !doctype html>
+ <html lang="en">
+-       let's rock
+-       and now for something completely different...
++       <br></br>
++
++
++
++
++       <h1>and now for something completely different...</h1>
+ </html>
+
+diff --git a/nochmehrmuell.txt b/nochmehrmuell.txt
+new file mode 100644
+index 0000000..28d1445
+--- /dev/null
++++ b/nochmehrmuell.txt
+@@ -0,0 +1 @@
++123456789
+(END)
++  (use "git add <file>..." to update what will be committed)
++  (use "git restore <file>..." to discard changes in working directory)
++        modified:   muell.txt
++
++no changes added to commit (use "git add" and/or "git commit -a")
++
++git reset <commitHash>: nimmt alle commits nach commitHash zurück, die Änderungen bleiben aber im pwd erhalten
++
++git reset --hard <commitHash>: wie git reset <commitHash>, aber die Änderungen werden auch im pwd verworfen - also Achtung!
++
++
++
++
++
++
++
++
++
++
+diff --git a/index.html b/index.html
+index 782ae88..868c885 100644
+--- a/index.html
++++ b/index.html
+@@ -1,6 +1,10 @@
+ !doctype html>
+ <html lang="en">
+-       let's rock
+-       and now for something completely different...
++       <br></br>
++
++
++
++
++       <h1>and now for something completely different...</h1>
+ </html>
+
+diff --git a/nochmehrmuell.txt b/nochmehrmuell.txt
+new file mode 100644
+index 0000000..28d1445
+--- /dev/null
++++ b/nochmehrmuell.txt
+@@ -0,0 +1 @@
++123456789
+(END)
++  (use "git add <file>..." to update what will be committed)
++  (use "git restore <file>..." to discard changes in working directory)
++        modified:   muell.txt
++
++no changes added to commit (use "git add" and/or "git commit -a")
++
++git reset <commitHash>: nimmt alle commits nach commitHash zurück, die Änderungen bleiben aber im pwd erhalten
++
++git reset --hard <commitHash>: wie git reset <commitHash>, aber die Änderungen werden auch im pwd verworfen - also Achtung!
++
++
++
++
++
++
++
++
++
++
+diff --git a/index.html b/index.html
+index 782ae88..868c885 100644
+--- a/index.html
++++ b/index.html
+@@ -1,6 +1,10 @@
+ !doctype html>
+ <html lang="en">
+-       let's rock
+-       and now for something completely different...
++       <br></br>
++
++
++
++
++       <h1>and now for something completely different...</h1>
+ </html>
+
+diff --git a/nochmehrmuell.txt b/nochmehrmuell.txt
+new file mode 100644
+index 0000000..28d1445
+--- /dev/null
++++ b/nochmehrmuell.txt
+@@ -0,0 +1 @@
++123456789
+(END)
++Changes not staged for commit:
++Changes not staged for commit:
++
++nach änderung der gestageten Datei:
++  (use "git add <file>..." to update what will be committed)
++  (use "git restore <file>..." to discard changes in working directory)
++
++ohne weiteres git add werden Änderungen nicht verfolgt!
++Allerdings ist der vorige Zustand dann 'weg'
++
++git commit: best practice: eine atomare änderung pro commit
++git commit -m "<message>": Änderung spezifizieren, möglichst genau und verständ
+lich, gut: auf Englisch
++
++danach wird angezeigt, wie viele Dateien geändert wurden, wie viele insertions
++
++warning: in the working copy of 'index.html', LF will be replaced by CRLF the n
+ext time Git touches it????
++
++git log: zeigt commit-history an, letzte Änderung ganz oben
++git log -p: gibt alle Veränderungen (diff) in den commits an, kann aber entspre
+chend lang werden
++
++q beendet das Ganze
++
++
++git log --oneline ist übersichtlicher (erste Zeile des Kommentars)
++
++commits überschreiben/letzten commit ändern
++
++Achtung: vorsichtig verwenden, nur bei lokalen Änderungen, nicht im remote Repo
+, vor allem wenn/wo andere mitarbeiten
++
++git commit --amend
++
++git diff: zeigt (noch nicht gestagete, bevor git add ausgeführt wurde) Änderung
+en im pwd. a/alte_version b/neue_version, - gelöschte, + hinzugekommene, @@ Zeil
+en die geändert wurden jeweils @@
++
++git diff --cached: zeigt Änderungen im staging area, sonst wie git diff
++
++git diff <hashÄltererCommit> <hashNeuererCommit> -- <optionalDateiName>: zeigt
+Änderungen nach commit, sonst wie git diff
++
++git <command> -- <dateiName>: bezieht das command nur auf die Datei, geht auch
+mit dateiName.* für alle möglichen Endungen
++
++git reset <optionalMitDateiNamen>: nimmt geänderte Dateien aus der staging area wieder raus
++
++in gitbash:
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ nano muell.txt
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git add muell.txt
++warning: in the working copy of 'muell.txt', LF will be replaced by CRLF the next time Git touches it
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git status
++On branch master
++Your branch is ahead of 'origin/master' by 1 commit.
++  (use "git push" to publish your local commits)
++
++Changes to be committed:
++  (use "git restore --staged <file>..." to unstage)
++        modified:   muell.txt
++
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git reset
++Unstaged changes after reset:
++M       muell.txt
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git status
++On branch master
++Your branch is ahead of 'origin/master' by 1 commit.
++  (use "git push" to publish your local commits)
++
++Changes not staged for commit:
++  (use "git add <file>..." to update what will be committed)
++  (use "git restore <file>..." to discard changes in working directory)
++        modified:   muell.txt
++
++no changes added to commit (use "git add" and/or "git commit -a")
++
++git reset <commitHash>: nimmt alle commits nach commitHash zurück, die Änderungen bleiben aber im pwd erhalten
++
++git reset --hard <commitHash>: wie git reset <commitHash>, aber die Änderungen werden auch im pwd verworfen - also Achtung!
++
++
++
++
++
++
++
++
++
++
+diff --git a/index.html b/index.html
+index 782ae88..868c885 100644
+--- a/index.html
++++ b/index.html
+@@ -1,6 +1,10 @@
+ !doctype html>
+ <html lang="en">
+-       let's rock
+-       and now for something completely different...
++       <br></br>
++
++
++
++
++       <h1>and now for something completely different...</h1>
+ </html>
+
+diff --git a/nochmehrmuell.txt b/nochmehrmuell.txt
+new file mode 100644
+index 0000000..28d1445
+--- /dev/null
++++ b/nochmehrmuell.txt
+@@ -0,0 +1 @@
++123456789
+diff --git a/git_kurs.txt b/git_kurs.txt
+new file mode 100644
+index 0000000..67f0287
+--- /dev/null
++++ b/git_kurs.txt
+@@ -0,0 +1,132 @@
++GIT-KURS Udemy
++
++Git Bash
++
++pwd: wo bin ich (Pfad/directory)
++cd: change directory
++cd ..: ins Vz. drüber wechseln
++ls: Verzeichnisse anzeigen
++ls     -a: auch versteckte Vz. anzeigen
++       -l: Rechte anzeigen
++mkdir <name>: Verzeichnis <name>erstellen
++touch <name>: Datei erstellen
++mv <name> <newName>
++mv <name> <path>
++cp <name> <copyName> <path>
++rm
++rm -r
++
++clear
++
++git config --global core.editor nano
++nano
++ctrl + o <-| (enter)
++ctrl x
++
++git init
++git status: zeigt unversionierte Dateien an
++
++staging area & commits
++
++Ablauf:
++working directory
++|      git add
++V
++staging area
++|      git commit
++V
++repository
++
++commit: aktuelle/r 'Version'/Zustand der Datei(en)
++wird vorbereitet in der staging area, dahin gelangt sie über
++git add <file oder folder>
++--> (use "git rm --cached <file>..." to unstage)
++
++nach änderung der gestageten Datei:
++  (use "git add <file>..." to update what will be committed)
++  (use "git restore <file>..." to discard changes in working directory)
++
++ohne weiteres git add werden Änderungen nicht verfolgt!
++Allerdings ist der vorige Zustand dann 'weg'
++
++git commit: best practice: eine atomare änderung pro commit
++git commit -m "<message>": Änderung spezifizieren, möglichst genau und verständlich, gut: auf Englisch
++
++danach wird angezeigt, wie viele Dateien geändert wurden, wie viele insertions
++
++warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it????
++
++git log: zeigt commit-history an, letzte Änderung ganz oben
++git log -p: gibt alle Veränderungen (diff) in den commits an, kann aber entsprechend lang werden
++
++q beendet das Ganze
++
++
++git log --oneline ist übersichtlicher (erste Zeile des Kommentars)
++
++commits überschreiben/letzten commit ändern
++
++Achtung: vorsichtig verwenden, nur bei lokalen Änderungen, nicht im remote Repo, vor allem wenn/wo andere mitarbeiten
++
++git commit --amend
++
++git diff: zeigt (noch nicht gestagete, bevor git add ausgeführt wurde) Änderungen im pwd. a/alte_version b/neue_version, - gelöschte, + hinzugekommene, @@ Zeilen die geändert wurden jeweils @@
++
++git diff --cached: zeigt Änderungen im staging area, sonst wie git diff
++
++git diff <hashÄltererCommit> <hashNeuererCommit> -- <optionalDateiName>: zeigt Änderungen nach commit, sonst wie git diff
++
++git <command> -- <dateiName>: bezieht das command nur auf die Datei, geht auch mit dateiName.* für alle möglichen Endungen
++
++git reset <optionalMitDateiNamen>: nimmt geänderte Dateien aus der staging area wieder raus
++
++in gitbash:
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ nano muell.txt
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git add muell.txt
++warning: in the working copy of 'muell.txt', LF will be replaced by CRLF the next time Git touches it
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git status
++On branch master
++Your branch is ahead of 'origin/master' by 1 commit.
++  (use "git push" to publish your local commits)
++
++Changes to be committed:
++  (use "git restore --staged <file>..." to unstage)
++        modified:   muell.txt
++
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git reset
++Unstaged changes after reset:
++M       muell.txt
++
++al_ni@ala-windoze MINGW64 ~/Projekte/gitkurs (master)
++$ git status
++On branch master
++Your branch is ahead of 'origin/master' by 1 commit.
++  (use "git push" to publish your local commits)
++
++Changes not staged for commit:
++Changes not staged for commit:
++  (use "git add <file>..." to update what will be committed)
++  (use "git restore <file>..." to discard changes in working directory)
++        modified:   muell.txt
++
++no changes added to commit (use "git add" and/or "git commit -a")
++
++git reset <commitHash>: nimmt alle commits nach commitHash zurück, die Änderungen bleiben aber im pwd erhalten
++
++git reset --hard <commitHash>: wie git reset <commitHash>, aber die Änderungen werden auch im pwd verworfen - also Achtung!
++
++
++
++
++
++
++
++
++
++
+diff --git a/index.html b/index.html
+index 782ae88..868c885 100644
+--- a/index.html
++++ b/index.html
+@@ -1,6 +1,10 @@
+ !doctype html>
+ <html lang="en">
+-       let's rock
+-       and now for something completely different...
++       <br></br>
++
++
++
++
++       <h1>and now for something completely different...</h1>
+ </html>
+
+diff --git a/nochmehrmuell.txt b/nochmehrmuell.txt
+new file mode 100644
+index 0000000..28d1445
+--- /dev/null
++++ b/nochmehrmuell.txt
+@@ -0,0 +1 @@
++123456789
+(END)
